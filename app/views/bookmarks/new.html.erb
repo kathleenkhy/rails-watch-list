@@ -1,11 +1,15 @@
-<div class="m-5">
-  <div class="my-3">
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.input :comment %>
-      <%= f.association :movie %>
-      <%= f.submit "Add movie", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-    <%= link_to "See #{@list.name}", list_path(@list), class: "btn btn-success" %>
+<div class="m-2">
+  <%= link_to "Back to List", list_path(params[:list_id]), class:"btn btn-primary" %>
 
+  <div class="m-5">
+    <div class="my-3">
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.submit "Add movie", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+      <%= link_to "See #{@list.name}", list_path(@list), class: "btn btn-success" %>
+
+  </div>
 </div>
