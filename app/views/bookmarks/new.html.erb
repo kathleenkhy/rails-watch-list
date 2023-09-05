@@ -1,6 +1,11 @@
-<%= simple_form_for [@list, @bookmark] do |f| %>
-  <%= f.input :comment %>
-  <%= f.association :movie %>
-  <%= f.submit "Add a movie" %>
-<% end %>
-<%= link_to "See movies in List", list_path(@list) %>
+<div class="m-5">
+  <div class="my-3">
+    <%= simple_form_for [@list, @bookmark] do |f| %>
+      <%= f.input :comment %>
+      <%= f.association :movie %>
+      <%= f.submit "Add movie", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+    <%= link_to "See #{@list.name}", list_path(@list), class: "btn btn-success" %>
+
+</div>

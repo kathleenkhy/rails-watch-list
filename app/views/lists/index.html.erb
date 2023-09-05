@@ -7,12 +7,11 @@
 
   <div style="color: white;" align="center">
     <h1>Save any kind of movies</h1>
-    <p>Classic</p>
   </div>
 </div>
 
 <div class="m-5">
-  <div class="d-flex justify-content-between">
+  <div class="d-flex justify-content-between my-4">
     <h3>My Lists</h3>
     <div>
       <%= link_to "Create a movie list", new_list_path, class: "btn btn-sm btn-success", style: "color: white;" %>
@@ -23,13 +22,14 @@
       <% @lists.each do |list| %>
         <div class="col-lg-4 col-md-6 col-sm-12">
           <div style="
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('<%= list.movies&.first&.poster_url || "https://source.unsplash.com/random?movie" %>');
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('<%= list.photo.attached? ? (cl_image_path list.photo.key) : "https://source.unsplash.com/random?movie" %>');
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
             justify-content: center;
             align-items: center;
+            text-align: center;
             color: white;
             text-decoration: none;
             margin-bottom: 1rem;

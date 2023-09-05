@@ -1,0 +1,9 @@
+<div class="m-5">
+  <h1>Edit <%= @movie.title %></h1>
+  <%= simple_form_for(@movie) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
+    <%= f.input :list_id, :as => :hidden, :input_html => { :value => params[:list_id] } %>
+  <% end %>
+</div>

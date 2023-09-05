@@ -80,3 +80,5 @@ gem "simple_form", "~> 5.2"
 gem 'rest-client'
 
 gem "dotenv-rails"
+
+gem "cloudinary"
