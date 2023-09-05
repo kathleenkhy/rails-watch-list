@@ -1,0 +1,33 @@
+<div class="banner" style="background-image: url(https://source.unsplash.com/featured/movies)">
+  <div class="banner-contents">
+    <h1>Save any kind of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <h1><%= @list.name %></h1>
+  <p>Movie count: <%= @list.movies.count %></p>
+
+  <div class="mt-5">
+    <h2>Movies</h2>
+
+    <div class="row">
+      <% @list.movies.each do |movie| %>
+
+        <div class="col-6">
+          <div class="movie-card">
+            <img src="<%= movie.poster_url %>" alt="<%= movie.title %>">
+            <h4><%= movie.title %></h4>
+          </div>
+        </div>
+
+      <% end %>
+    </div>
+
+  </div>
+</div>
+<%= link_to "Add a movie", new_list_bookmark_path(@list) %>
+<%= link_to "View all Lists", lists_path %>

@@ -1,0 +1,43 @@
+<div style="
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2059&q=80');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 25vh; display: flex; justify-content: center; align-items: center;">
+
+  <div style="color: white;" align="center">
+    <h1>Save any kind of movies</h1>
+    <p>Classic</p>
+  </div>
+</div>
+
+<div class="m-5">
+  <div class="d-flex justify-content-between">
+    <h3>My Lists</h3>
+    <div>
+      <%= link_to "Create a movie list", new_list_path, class: "btn btn-sm btn-success", style: "color: white;" %>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <% @lists.each do |list| %>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div style="
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url('<%= list.movies&.first&.poster_url || "https://source.unsplash.com/random?movie" %>');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            height: 25vh; width: 100%; padding-left: 1rem; padding-right: 1rem;">
+            <h1><%= link_to "#{list.name}", list, style: "color: white; text-decoration: none;" %></h1>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
